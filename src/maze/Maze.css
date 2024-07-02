@@ -1,0 +1,11 @@
+.wall {
+    background-color: #11d537;
+    width: 50px;
+    height: 50px;
+}
+
+.cell {
+    background-color: #5b5a5a;
+    width: 50px;
+    height: 50px;
+}
