@@ -1,11 +1,38 @@
 .wall {
     background-color: #11d537;
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
 }
 
 .cell {
     background-color: #5b5a5a;
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
+}
+
+.start {
+    background-color: #5b5a5a;
+    width: 25px;
+    height: 25px;
+    font-size: 5px;
+    font-weight: bold;
+    align-content: center;
+}
+
+.finish {
+    width: 25px;
+    height: 25px;
+    background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black),
+    linear-gradient(45deg, black 25%, white 25%, white 75%, black 75%, black);
+    background-size: 10px 10px;
+    background-position: 0 0, 5px 5px;
+}
+
+
+.maze {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
 }

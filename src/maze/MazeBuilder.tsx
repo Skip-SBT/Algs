@@ -1,15 +1,17 @@
 import * as React from 'react';
 import {Wall} from './Wall';
 import {Cell} from './Cell';
+import {Finish} from './Finish';
+import {Start} from './Start';
 
 
 export function MazeBuilder(): React.ReactElement{
 
     const testMap = [
-        ['w', '', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w'],
+        ['w', 's', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w'],
         ['w', '', '', '', 'w', '', '', '', '', 'w'],
         ['w', 'w', 'w', '', 'w', '', 'w', 'w', '', 'w'],
-        ['w', '', 'w', '', '', '', 'w', '', '', 'w'],
+        ['w', 'f', 'w', '', '', '', 'w', '', '', 'w'],
         ['w', '', 'w', 'w', 'w', 'w', 'w', 'w', '', 'w'],
         ['w', '', '', '', 'w', '', '', 'w', '', 'w'],
         ['w', 'w', 'w', '', 'w', '', 'w', 'w', '', 'w'],
@@ -29,9 +31,14 @@ function constructMaze(map: Array<Array<string>>): React.ReactElement {
         return (
             <div key={rowIndex} style={{ display: 'flex' }}>
                 {row.map((cell: string, cellIndex: number) => {
-                    if (cell === 'w') {
+                    switch (cell) {
+                    case 'w':
                         return <Wall key={`${rowIndex}-${cellIndex}`} />;
-                    } else {
+                    case 's':
+                        return <Start key={`${rowIndex}-${cellIndex}`} />;
+                    case 'f':
+                        return <Finish key={`${rowIndex}-${cellIndex}`} />;
+                    default:
                         return <Cell key={`${rowIndex}-${cellIndex}`} />;
                     }
                 })}
