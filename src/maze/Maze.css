@@ -35,11 +35,73 @@
     background-position: 0 0, 5px 5px;
 }
 
+.resetButton-fixed {
+    background-color: #FF6961;
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    align-content: center;
+    position: fixed;
+    top: 50px;
+    right: -30px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    transform: translate(-50%, -50%);
+}
+
+.resetButton {
+    background-color: #FF6961;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+.timer{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    color: black;
+}
+
+.mazeContainer {
+    display: flex;
+}
 
 .maze {
-    display: flex;
-    flex-wrap: wrap;
-    width: 500px;
-    height: 500px;
-    border: 1px solid black;
+    flex-grow: 1;
+}
+
+.winBox {
+    margin-left: 20px;
+}
+
+.winMessage {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    width: 400px;
+    color: black;
 }

@@ -43,4 +43,12 @@ export class PlayerController {
 
         return this.position;
     }
+
+    public resetGame(initialPosition: Position): void {
+        this.position = initialPosition;
+    }
+
+    public hasWon(): boolean {
+        return this.map[this.position.row][this.position.col] === 'f';
+    }
 }
