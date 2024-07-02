@@ -1,11 +1,11 @@
 import './App.css';
-import {MazeBuilder} from './maze/MazeBuilder.tsx';
+import {MazeController} from './maze/MazeController.tsx';
 
 function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <MazeBuilder/>
+                <MazeController/>
             </header>
         </div>
     );
