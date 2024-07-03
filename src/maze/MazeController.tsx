@@ -32,6 +32,8 @@ export function MazeController(): React.ReactElement {
         { label: '15x15', value: mazeList.maze3 },
         // @ts-ignore
         { label: '20x20', value: mazeList.maze4 },
+        // @ts-ignore
+        { label: '40x40', value: mazeList.maze5 },
         // Add other mazes here
     ];
 
@@ -104,7 +106,7 @@ export function MazeController(): React.ReactElement {
                         if (index === path.length - 1) {
                             setHasWon(true);
                         }
-                    }, index * 10);
+                    }, index * 50);
                 });
             }
         }
