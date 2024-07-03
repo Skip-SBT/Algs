@@ -17,8 +17,9 @@
     /* Completeness */
     "skipLibCheck": true,
     /* Skip type checking all .d.ts files. */
-    "jsx": "react"
+    "jsx": "react",
+    "resolveJsonModule": true,
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "public/**/*.d.ts", "src/custom.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json", "public/**/*.d.ts", "src/custom.d.ts", "src/declarations.d.ts"],
   "exclude": ["node_modules"]
 }

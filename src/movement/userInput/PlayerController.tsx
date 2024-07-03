@@ -37,7 +37,7 @@ export class PlayerController {
             break;
         }
 
-        if (this.map[newRow][newCol] !== 'w') {
+        if (this.map[newRow][newCol] !== 'W') {
             this.position = { row: newRow, col: newCol };
         }
 
@@ -49,6 +49,6 @@ export class PlayerController {
     }
 
     public hasWon(): boolean {
-        return this.map[this.position.row][this.position.col] === 'f';
+        return this.map[this.position.row][this.position.col] === 'F';
     }
 }
