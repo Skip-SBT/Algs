@@ -77,6 +77,23 @@
     color: black;
 }
 
+.moveCount{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    transform: translate(-50%, -50%);
+    color: black;
+    width: 200px;
+
+}
+
 .mazeContainer {
     display: flex;
 }

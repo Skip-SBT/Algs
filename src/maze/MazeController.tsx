@@ -36,8 +36,9 @@ export function MazeController(): React.ReactElement {
     let [hasWon, setHasWon] = useState<boolean>(false);
 
     // Timer state
-    const [timer, setTimer] = useState<number>(0);
-    const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
+    let [timer, setTimer] = useState<number>(0);
+    let [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
+    let [moveCount, setMoveCount] = useState<number>(0);
 
     useEffect(() => {
         let interval: NodeJS.Timeout;
@@ -61,7 +62,7 @@ export function MazeController(): React.ReactElement {
 
             let newPosition = playerController.handleKeyDown(event);
             setPlayerPosition(newPosition);
-
+            setMoveCount(prevCount => prevCount + 1);
             if (playerController.hasWon()) {
                 setHasWon(true);
                 setIsTimerRunning(false);
@@ -78,11 +79,13 @@ export function MazeController(): React.ReactElement {
         resetGame(setPlayerPosition, initialPosition, playerController, setHasWon);
         setTimer(0);
         setIsTimerRunning(false);
+        setMoveCount(0);
     };
 
     return (
         <>
             <div className='timer'>{timer.toFixed(1)} Seconds</div>
+            <div className='moveCount'>{moveCount} Moves</div>
             {!hasWon && (
                 <button className='resetButton-fixed' onClick={resetGameHandler}>Reset</button>
             )}
@@ -95,6 +98,8 @@ export function MazeController(): React.ReactElement {
                         <div>Congratulations! You have won!</div>
                         <br />
                         <div>Time needed for completion: {timer.toFixed(1)} Seconds</div>
+                        <br />
+                        <div>Number of moves: {moveCount}</div>
                         <br />
                         <button className='resetButton' onClick={resetGameHandler}>Reset</button>
                     </div>
